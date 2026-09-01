@@ -50,7 +50,6 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.03);
         }
 
-        /* 로고 영역 스타일 */
         .logo-box {
             display: flex;
             align-items: center;
@@ -74,6 +73,12 @@
             color: var(--accent);
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
@@ -90,6 +95,34 @@
 
         nav ul li a:hover {
             color: var(--accent);
+        }
+
+        /* 언어 전환 버튼 스타일 */
+        .lang-switch {
+            display: flex;
+            background: #f1f5f9;
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            padding: 3px;
+            cursor: pointer;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-sub);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
         }
 
         /* 메인 히어로 슬라이드 섹션 */
@@ -214,7 +247,7 @@
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
         }
 
@@ -259,52 +292,100 @@
             color: var(--primary);
         }
 
-        .about-img-box {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        /* 파트너사 카드 컨테이너 */
+        .partner-card-box {
+            background: var(--bg-white);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
         }
 
-        .about-img-box img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
+        .partner-header-text {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
         }
 
-        /* 핵심 경쟁력 섹션 (좌우 높이 일치 레이아웃) */
+        .partner-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .partner-item {
+            background: #f8fafc;
+            border: 1px solid #edf2f7;
+            border-radius: 12px;
+            height: 110px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .partner-item:hover {
+            border-color: var(--accent);
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.08);
+            transform: translateY(-3px);
+        }
+
+        .partner-item img {
+            width: 110px;
+            height: 45px;
+            object-fit: contain;
+        }
+
+        /* 핵심 경쟁력 섹션 */
         .comp-section-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
-            align-items: stretch; /* 좌우 높이를 동일하게 늘려줌 */
+            align-items: center;
         }
 
         .comp-cards-wrapper {
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* 카드들 사이에 간격을 균등하게 배분 */
-            gap: 20px;
+            gap: 16px;
         }
 
         .comp-img-box {
             position: relative;
-            border-radius: 16px;
+            background: #fbfbfc;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            height: 100%; /* 좌측 카드 전체 높이에 완벽히 맞춤 */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+            padding: 10px;
+            height: 490px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .comp-img-box img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
 
         .comp-card {
             background: var(--bg-white);
-            border-radius: 16px;
-            padding: 30px 35px;
+            border-radius: 14px;
+            padding: 22px 26px;
             border: 1px solid var(--border-color);
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             position: relative;
@@ -319,34 +400,34 @@
         }
 
         .comp-card .num {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 900;
             color: #f1f5f9;
             position: absolute;
-            top: 15px;
-            right: 25px;
+            top: 10px;
+            right: 20px;
         }
 
         .comp-card i {
-            font-size: 1.8rem;
+            font-size: 1.3rem;
             color: var(--accent);
-            margin-bottom: 12px;
+            margin-bottom: 6px;
         }
 
         .comp-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             font-weight: 800;
             color: var(--primary);
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         .comp-card p {
             color: var(--text-sub);
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 0.85rem;
+            line-height: 1.45;
         }
 
-        /* 주요 제품 및 적용 분야 섹션 (4개 한 줄 배치) */
+        /* 주요 제품 및 적용 분야 섹션 */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -419,39 +500,53 @@
             color: var(--accent);
         }
 
-        /* 오시는 길 섹션 스타일 */
-        .contact-box {
-            background: var(--primary);
-            color: #fff;
+        /* 오시는 길 섹션 */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: stretch;
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
             border-radius: 20px;
-            padding: 60px;
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
 
         .contact-info h3 {
             font-size: 1.8rem;
             font-weight: 800;
             margin-bottom: 15px;
-            color: #fff;
+            color: var(--primary);
         }
 
         .contact-info ul {
             list-style: none;
+            margin-top: 25px;
         }
 
         .contact-info ul li {
             margin-bottom: 15px;
-            color: #cbd5e1;
-            font-size: 1.1rem;
+            color: var(--text-sub);
+            font-size: 1.05rem;
             display: flex;
             align-items: center;
             gap: 15px;
         }
 
         .contact-info ul li i {
-            color: #38bdf8;
-            font-size: 1.3rem;
+            color: var(--accent);
+            font-size: 1.2rem;
             width: 25px;
+        }
+
+        .map-box {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
         }
 
         /* 푸터 */
@@ -468,12 +563,15 @@
         @media(max-width: 1200px) {
             .product-grid { grid-template-columns: repeat(2, 1fr); }
             .comp-section-content { grid-template-columns: 1fr; }
+            .contact-content { grid-template-columns: 1fr; }
+            .about-grid { grid-template-columns: 1fr; }
+            .comp-img-box { height: 350px; }
         }
         @media(max-width: 768px) {
             .product-grid { grid-template-columns: 1fr; }
-            .about-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.8rem; }
             header { padding: 20px 30px; }
+            .nav-right { gap: 15px; }
             nav { display: none; }
             section { padding: 80px 5%; }
         }
@@ -487,14 +585,21 @@
             <img src="logo.png" class="logo-img" alt="장안스틸 로고">
             <div class="logo">JANGAN <span>STEEL</span></div>
         </a>
-        <nav>
-            <ul>
-                <li><a href="#about">회사소개</a></li>
-                <li><a href="#competitiveness">핵심경쟁력</a></li>
-                <li><a href="#products">제품적용분야</a></li>
-                <li><a href="#contact">오시는길</a></li>
-            </ul>
-        </nav>
+        <div class="nav-right">
+            <nav>
+                <ul>
+                    <li><a href="#about" data-key="nav_about">회사소개</a></li>
+                    <li><a href="#competitiveness" data-key="nav_comp">핵심경쟁력</a></li>
+                    <li><a href="#products" data-key="nav_products">제품적용분야</a></li>
+                    <li><a href="#contact" data-key="nav_contact">오시는길</a></li>
+                </ul>
+            </nav>
+            <!-- 언어 전환 버튼 토글 -->
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="switchLanguage('ko')">KO</button>
+                <button class="lang-btn" onclick="switchLanguage('en')">EN</button>
+            </div>
+        </div>
     </header>
 
     <!-- 히어로 섹션 -->
@@ -507,9 +612,9 @@
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
-            <div class="hero-tag" data-aos="fade-up">STEEL SOLUTION LEADER</div>
-            <h1 data-aos="fade-up" data-aos-delay="100">최고의 철강 솔루션으로<br><span>가치를 창조합니다</span></h1>
-            <p data-aos="fade-up" data-aos-delay="200">메이저 4사 직거래 네트워크와 100% 국산 정품 보증을 통해 귀사의 성장을 뒷받침하는 가장 단단한 파트너가 되어 드립니다.</p>
+            <div class="hero-tag" data-aos="fade-up" data-key="hero_tag">STEEL SOLUTION LEADER</div>
+            <h1 data-aos="fade-up" data-aos-delay="100" data-key="hero_title">최고의 철강 솔루션으로<br><span>가치를 창조합니다</span></h1>
+            <p data-aos="fade-up" data-aos-delay="200" data-key="hero_desc">메이저 4사 직거래 네트워크와 100% 국산 정품 보증을 통해 귀사의 성장을 뒷받침하는 가장 단단한 파트너가 되어 드립니다.</p>
         </div>
     </section>
 
@@ -517,51 +622,59 @@
     <section id="about">
         <div class="about-grid">
             <div class="about-text" data-aos="fade-right">
-                <span style="color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px;">Reliability & Innovation</span>
-                <h3>장안스틸은 고객의 수익을 최우선으로 생각합니다</h3>
-                <p>급변하는 철강 시황 속에서 메이저 4사와의 견고한 직거래 네트워크를 통해 유통 거품을 걷어냈습니다. 단순한 자재 납품을 넘어 귀사의 생산 공정과 단가 구조를 깊이 이해하는 전략적 파트너가 되겠습니다.</p>
+                <span style="color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px;" data-key="about_sub">Reliability & Innovation</span>
+                <h3 data-key="about_title">장안스틸은 고객의 수익을 최우선으로 생각합니다</h3>
+                <p data-key="about_desc">급변하는 철강 시황 속에서 메이저 4사와의 견고한 직거래 네트워크를 통해 유통 거품을 걷어냈습니다. 단순한 자재 납품을 넘어 귀사의 생산 공정과 단가 구조를 깊이 이해하는 전략적 파트너가 되겠습니다.</p>
                 <div class="about-features">
                     <div class="feature-item">
                         <i class="fa-solid fa-circle-check"></i>
-                        <span>100% 국산 정품 보증 및 밀시트(MTC) 발급</span>
+                        <span data-key="about_feat1">100% 국산 정품 보증 및 밀시트(MTC) 발급</span>
                     </div>
                     <div class="feature-item">
                         <i class="fa-solid fa-circle-check"></i>
-                        <span>관급공사 및 SOC 현장 검수 기준 완벽 충족</span>
+                        <span data-key="about_feat2">관급공사 및 SOC 현장 검수 기준 완벽 충족</span>
                     </div>
                 </div>
             </div>
-            <div class="about-img-box" data-aos="fade-left">
-                <img src="main1.jpg" alt="장안스틸 회사 소개 이미지">
+            
+            <div class="partner-card-box" data-aos="fade-left">
+                <div class="partner-header-text" data-key="partner_sub">Strategic Partners</div>
+                <div class="partner-title" data-key="partner_title">주요 메이저 파트너사 협력 체계</div>
+                <div class="partner-grid">
+                    <div class="partner-item"><img src="DK.png" alt="동국제강"></div>
+                    <div class="partner-item"><img src="KG.png" alt="KG스틸"></div>
+                    <div class="partner-item"><img src="SEAH.png" alt="세아제강"></div>
+                    <div class="partner-item"><img src="AJU.png" alt="아주스틸"></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 핵심 경쟁력 섹션 (좌우 높이 완벽 일치 적용) -->
+    <!-- 핵심 경쟁력 섹션 -->
     <section id="competitiveness" style="background: #f1f5f9;">
         <div class="section-header" data-aos="fade-up">
-            <span>Our Competitiveness</span>
-            <h2>장안스틸의 핵심 경쟁력</h2>
+            <span data-key="comp_sub">Our Competitiveness</span>
+            <h2 data-key="comp_title">장안스틸의 핵심 경쟁력</h2>
         </div>
         <div class="comp-section-content">
             <div class="comp-cards-wrapper" data-aos="fade-right">
                 <div class="comp-card">
                     <div class="num">01</div>
                     <i class="fa-solid fa-won-sign"></i>
-                    <h3>압도적인 단가 경쟁력</h3>
-                    <p>메이저 4사와의 다이렉트 소싱으로 유통 단계를 최소화하고 시장 변동성에도 흔들리지 않는 가장 합리적인 견적을 약속드립니다.</p>
+                    <h3 data-key="comp1_title">압도적인 단가 경쟁력</h3>
+                    <p data-key="comp1_desc">메이저 4사와의 다이렉트 소싱으로 유통 단계를 최소화하고 시장 변동성에도 흔들리지 않는 가장 합리적인 견적을 약속드립니다.</p>
                 </div>
                 <div class="comp-card">
                     <div class="num">02</div>
                     <i class="fa-solid fa-map-location-dot"></i>
-                    <h3>광역 네트워크 & 신속 납기</h3>
-                    <p>부산을 중심으로 전국 주요 거점 및 협력 가공처를 연계하여 운송비를 혁신적으로 절감하고 긴급 발주에도 신속하게 대응합니다.</p>
+                    <h3 data-key="comp2_title">광역 네트워크 & 신속 납기</h3>
+                    <p data-key="comp2_desc">부산을 중심으로 전국 주요 거점 및 협력 가공처를 연계하여 운송비를 혁신적으로 절감하고 긴급 발주에도 신속하게 대응합니다.</p>
                 </div>
                 <div class="comp-card">
                     <div class="num">03</div>
                     <i class="fa-solid fa-layer-group"></i>
-                    <h3>토탈 스틸 솔루션</h3>
-                    <p>GI, EGI, GL, 칼라강판은 물론 차세대 고내식 합금도금 강판(GIX)까지 고객의 모든 니즈를 충족하는 완벽한 포트폴리오를 제공합니다.</p>
+                    <h3 data-key="comp3_title">토탈 스틸 솔루션</h3>
+                    <p data-key="comp3_desc">GI, EGI, GL, 칼라강판은 물론 차세대 고내식 합금도금 강판(GIX)까지 고객의 모든 니즈를 충족하는 완벽한 포트폴리오를 제공합니다.</p>
                 </div>
             </div>
             <div class="comp-img-box" data-aos="fade-left">
@@ -573,21 +686,21 @@
     <!-- 주요 제품 및 적용 분야 섹션 -->
     <section id="products">
         <div class="section-header" data-aos="fade-up">
-            <span>Total Steel Solution</span>
-            <h2>주요 제품 및 적용 분야</h2>
+            <span data-key="prod_sub">Total Steel Solution</span>
+            <h2 data-key="prod_title">주요 제품 및 적용 분야</h2>
         </div>
         <div class="product-grid">
             <!-- GI -->
             <div class="product-card" data-aos="fade-up" data-aos-delay="100">
                 <img src="gi.jpg" alt="GI 용융아연도금강판" class="product-img">
                 <div class="product-body">
-                    <h3>01. GI (용융아연도금강판)</h3>
-                    <p>우수한 내식성과 두꺼운 도금층을 자랑하는 범용 아연 도금 강판</p>
+                    <h3 data-key="prod1_title">01. GI (용융아연도금강판)</h3>
+                    <p data-key="prod1_desc">우수한 내식성과 두꺼운 도금층을 자랑하는 범용 아연 도금 강판</p>
                     <div class="tag-wrap">
-                        <span class="tag"><i class="fa-solid fa-tv"></i> 가전</span>
-                        <span class="tag"><i class="fa-solid fa-car"></i> 자동차</span>
-                        <span class="tag"><i class="fa-solid fa-wind"></i> 덕트</span>
-                        <span class="tag"><i class="fa-solid fa-shield"></i> 방음벽</span>
+                        <span class="tag"><i class="fa-solid fa-tv"></i> <span data-key="tag_homeapp">가전</span></span>
+                        <span class="tag"><i class="fa-solid fa-car"></i> <span data-key="tag_auto">자동차</span></span>
+                        <span class="tag"><i class="fa-solid fa-wind"></i> <span data-key="tag_duct">덕트</span></span>
+                        <span class="tag"><i class="fa-solid fa-shield"></i> <span data-key="tag_soundproof">방음벽</span></span>
                     </div>
                 </div>
             </div>
@@ -595,12 +708,12 @@
             <div class="product-card" data-aos="fade-up" data-aos-delay="200">
                 <img src="egi.jpg" alt="EGI 전기아연도금강판" class="product-img">
                 <div class="product-body">
-                    <h3>02. EGI (전기아연도금강판)</h3>
-                    <p>표면이 매끄럽고 균일하며 소재 본연의 기계적 성질을 완벽히 유지</p>
+                    <h3 data-key="prod2_title">02. EGI (전기아연도금강판)</h3>
+                    <p data-key="prod2_desc">표면이 매끄럽고 균일하며 소재 본연의 기계적 성질을 완벽히 유지</p>
                     <div class="tag-wrap">
-                        <span class="tag"><i class="fa-solid fa-tv"></i> 가전</span>
-                        <span class="tag"><i class="fa-solid fa-door-closed"></i> 방화문</span>
-                        <span class="tag"><i class="fa-solid fa-elevator"></i> 승강기</span>
+                        <span class="tag"><i class="fa-solid fa-tv"></i> <span data-key="tag_homeapp">가전</span></span>
+                        <span class="tag"><i class="fa-solid fa-door-closed"></i> <span data-key="tag_door">방화문</span></span>
+                        <span class="tag"><i class="fa-solid fa-elevator"></i> <span data-key="tag_elevator">승강기</span></span>
                     </div>
                 </div>
             </div>
@@ -608,12 +721,12 @@
             <div class="product-card" data-aos="fade-up" data-aos-delay="300">
                 <img src="gl.jpg" alt="GL 갈바륨강판" class="product-img">
                 <div class="product-body">
-                    <h3>03. GL (갈바륨강판)</h3>
-                    <p>Al-Zn 합금 도금으로 내식·내구·내열·내산성을 모두 갖춘 완성형</p>
+                    <h3 data-key="prod3_title">03. GL (갈바륨강판)</h3>
+                    <p data-key="prod3_desc">Al-Zn 합금 도금으로 내식·내구·내열·내산성을 모두 갖춘 완성형</p>
                     <div class="tag-wrap">
-                        <span class="tag"><i class="fa-solid fa-house-chimney"></i> 지붕재</span>
-                        <span class="tag"><i class="fa-solid fa-industry"></i> 파이프</span>
-                        <span class="tag"><i class="fa-solid fa-building"></i> 건축외장</span>
+                        <span class="tag"><i class="fa-solid fa-house-chimney"></i> <span data-key="tag_roof">지붕재</span></span>
+                        <span class="tag"><i class="fa-solid fa-industry"></i> <span data-key="tag_pipe">파이프</span></span>
+                        <span class="tag"><i class="fa-solid fa-building"></i> <span data-key="tag_exterior">건축외장</span></span>
                     </div>
                 </div>
             </div>
@@ -621,11 +734,11 @@
             <div class="product-card" data-aos="fade-up" data-aos-delay="400">
                 <img src="gix.jpg" alt="GIX 고내식 강판" class="product-img">
                 <div class="product-body">
-                    <h3>04. GIX / GLX (고내식 강판)</h3>
-                    <p>알루미늄-아연-마그네슘 합금 도금으로 완성한 극강의 내식성 차세대 강판</p>
+                    <h3 data-key="prod4_title">04. GIX / GLX (고내식 강판)</h3>
+                    <p data-key="prod4_desc">알루미늄-아연-마그네슘 합금 도금으로 완성한 극강의 내식성 차세대 강판</p>
                     <div class="tag-wrap">
-                        <span class="tag"><i class="fa-solid fa-solar-panel"></i> 태양광</span>
-                        <span class="tag"><i class="fa-solid fa-city"></i> 고내식재</span>
+                        <span class="tag"><i class="fa-solid fa-solar-panel"></i> <span data-key="tag_solar">태양광</span></span>
+                        <span class="tag"><i class="fa-solid fa-city"></i> <span data-key="tag_anticorrosive">고내식재</span></span>
                     </div>
                 </div>
             </div>
@@ -635,28 +748,32 @@
     <!-- 오시는 길 섹션 -->
     <section id="contact">
         <div class="section-header" data-aos="fade-up">
-            <span>Location & Contact</span>
-            <h2>오시는 길</h2>
+            <span data-key="contact_sub">Location & Contact</span>
+            <h2 data-key="contact_title">오시는 길</h2>
         </div>
-        <div class="contact-box" data-aos="fade-up">
+        <div class="contact-content" data-aos="fade-up">
             <div class="contact-info">
                 <h3>(주)장안스틸 (JANGAN STEEL)</h3>
+                <p style="color: var(--text-sub);" data-key="contact_desc">귀사의 가장 단단한 철강 파트너가 되어 드리겠습니다.</p>
                 <ul>
-                    <li><i class="fa-solid fa-location-dot"></i> 부산광역시 남구 수영로 312, 21센츄리시티 2020호</li>
+                    <li><i class="fa-solid fa-location-dot"></i> <span data-key="contact_addr">부산광역시 남구 수영로 312, 21센츄리시티 2020호</span></li>
                     <li><i class="fa-solid fa-phone"></i> 051-714-0044</li>
                     <li><i class="fa-solid fa-fax"></i> 051-714-0046</li>
                     <li><i class="fa-solid fa-envelope"></i> jangansteel@naver.com</li>
                 </ul>
+            </div>
+            <div class="map-box">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x3568ecf05c0a2d79%3A0x75d69cad663c0b75!2z67aA7IKw6rSR7Jet7IucIOuCqOq1rCDsiJjsmIHroZwgMzEy!5e1!3m2!1sko!2skr!4v1788223948619!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
         </div>
     </section>
 
     <!-- 푸터 -->
     <footer>
-        <p>&copy; 2026 JANGAN STEEL. All Rights Reserved.</p>
+        <p data-key="footer_copy">&copy; 2026 JANGAN STEEL. All Rights Reserved.</p>
     </footer>
 
-    <!-- AOS 스크롤 애니메이션 및 슬라이드 전환 스크립트 -->
+    <!-- 언어 전환 및 애니메이션 스크립트 -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
@@ -664,6 +781,129 @@
             once: true
         });
 
+        // 다국어 딕셔너리 데이터
+        const translations = {
+            ko: {
+                nav_about: "회사소개",
+                nav_comp: "핵심경쟁력",
+                nav_products: "제품적용분야",
+                nav_contact: "오시는길",
+                hero_tag: "STEEL SOLUTION LEADER",
+                hero_title: "최고의 철강 솔루션으로<br><span>가치를 창조합니다</span>",
+                hero_desc: "메이저 4사 직거래 네트워크와 100% 국산 정품 보증을 통해 귀사의 성장을 뒷받침하는 가장 단단한 파트너가 되어 드립니다.",
+                about_sub: "Reliability & Innovation",
+                about_title: "장안스틸은 고객의 수익을 최우선으로 생각합니다",
+                about_desc: "급변하는 철강 시황 속에서 메이저 4사와의 견고한 직거래 네트워크를 통해 유통 거품을 걷어냈습니다. 단순한 자재 납품을 넘어 귀사의 생산 공정과 단가 구조를 깊이 이해하는 전략적 파트너가 되겠습니다.",
+                about_feat1: "100% 국산 정품 보증 및 밀시트(MTC) 발급",
+                about_feat2: "관급공사 및 SOC 현장 검수 기준 완벽 충족",
+                partner_sub: "Strategic Partners",
+                partner_title: "주요 메이저 파트너사 협력 체계",
+                comp_sub: "Our Competitiveness",
+                comp_title: "장안스틸의 핵심 경쟁력",
+                comp1_title: "압도적인 단가 경쟁력",
+                comp1_desc: "메이저 4사와의 다이렉트 소싱으로 유통 단계를 최소화하고 시장 변동성에도 흔들리지 않는 가장 합리적인 견적을 약속드립니다.",
+                comp2_title: "광역 네트워크 & 신속 납기",
+                comp2_desc: "부산을 중심으로 전국 주요 거점 및 협력 가공처를 연계하여 운송비를 혁신적으로 절감하고 긴급 발주에도 신속하게 대응합니다.",
+                comp3_title: "토탈 스틸 솔루션",
+                comp3_desc: "GI, EGI, GL, 칼라강판은 물론 차세대 고내식 합금도금 강판(GIX)까지 고객의 모든 니즈를 충족하는 완벽한 포트폴리오를 제공합니다.",
+                prod_sub: "Total Steel Solution",
+                prod_title: "주요 제품 및 적용 분야",
+                prod1_title: "01. GI (용융아연도금강판)",
+                prod1_desc: "우수한 내식성과 두꺼운 도금층을 자랑하는 범용 아연 도금 강판",
+                prod2_title: "02. EGI (전기아연도금강판)",
+                prod2_desc: "표면이 매끄럽고 균일하며 소재 본연의 기계적 성질을 완벽히 유지",
+                prod3_title: "03. GL (갈바륨강판)",
+                prod3_desc: "Al-Zn 합금 도금으로 내식·내구·내열·내산성을 모두 갖춘 완성형",
+                prod4_title: "04. GIX / GLX (고내식 강판)",
+                prod4_desc: "알루미늄-아연-마그네슘 합금 도금으로 완성한 극강의 내식성 차세대 강판",
+                tag_homeapp: "가전",
+                tag_auto: "자동차",
+                tag_duct: "덕트",
+                tag_soundproof: "방음벽",
+                tag_door: "방화문",
+                tag_elevator: "승강기",
+                tag_roof: "지붕재",
+                tag_pipe: "파이프",
+                tag_exterior: "건축외장",
+                tag_solar: "태양광",
+                tag_anticorrosive: "고내식재",
+                contact_sub: "Location & Contact",
+                contact_title: "오시는 길",
+                contact_desc: "귀사의 가장 단단한 철강 파트너가 되어 드리겠습니다.",
+                contact_addr: "부산광역시 남구 수영로 312, 21센츄리시티 2020호",
+                footer_copy: "&copy; 2026 JANGAN STEEL. All Rights Reserved."
+            },
+            en: {
+                nav_about: "About Us",
+                nav_comp: "Competitiveness",
+                nav_products: "Products",
+                nav_contact: "Contact",
+                hero_tag: "STEEL SOLUTION LEADER",
+                hero_title: "Creating Value with<br><span>The Best Steel Solutions</span>",
+                hero_desc: "We support your growth as the strongest partner through direct major mill networks and 100% domestic product certification.",
+                about_sub: "Reliability & Innovation",
+                about_title: "JANGAN STEEL puts customer profit first",
+                about_desc: "Amid rapid market shifts, we eliminated distribution margins via direct networks with 4 major mills. Beyond material supply, we act as a strategic partner deeply understanding your production and cost structures.",
+                about_feat1: "100% Domestic Authentic Guarantee & MTC Issuance",
+                about_feat2: "Fully Compliant with Public Works & SOC Inspection Standards",
+                partner_sub: "Strategic Partners",
+                partner_title: "Major Partner Collaboration Network",
+                comp_sub: "Our Competitiveness",
+                comp_title: "Our Core Competitiveness",
+                comp1_title: "Unmatched Pricing Competitiveness",
+                comp1_desc: "We minimize distribution tiers through direct sourcing with major mills, promising the most reasonable quotes unaffected by market volatility.",
+                comp2_title: "Wide Network & Fast Delivery",
+                comp2_desc: "Centering around Busan, we link nationwide key bases and partner processors to sharply reduce shipping costs and promptly handle urgent orders.",
+                comp3_title: "Total Steel Solution",
+                comp3_desc: "We provide a complete portfolio meeting all customer needs, from GI, EGI, GL, and color-coated sheets to next-gen high-corrosion-resistant alloy-coated steel (GIX).",
+                prod_sub: "Total Steel Solution",
+                prod_title: "Key Products & Applications",
+                prod1_title: "01. GI (Hot-Dip Galvanized Steel)",
+                prod1_desc: "General-purpose galvanized steel featuring superior corrosion resistance and thick coating layers.",
+                prod2_title: "02. EGI (Electro-Galvanized Steel)",
+                prod2_desc: "Smooth and uniform surface maintaining the inherent mechanical properties of the material perfectly.",
+                prod3_title: "03. GL (Galvalume Steel)",
+                prod3_desc: "An ultimate type featuring corrosion, durability, heat, and acid resistance through Al-Zn alloy coating.",
+                prod4_title: "04. GIX / GLX (High Corrosion Resistant Steel)",
+                prod4_desc: "Next-gen steel completed with Aluminum-Zinc-Magnesium alloy coating for extreme corrosion resistance.",
+                tag_homeapp: "Home Appl.",
+                tag_auto: "Automotive",
+                tag_duct: "Duct",
+                tag_soundproof: "Sound Barrier",
+                tag_door: "Fire Door",
+                tag_elevator: "Elevator",
+                tag_roof: "Roofing",
+                tag_pipe: "Pipe",
+                tag_exterior: "Exterior",
+                tag_solar: "Solar",
+                tag_anticorrosive: "High Corrosion",
+                contact_sub: "Location & Contact",
+                contact_title: "Location & Contact",
+                contact_desc: "We will be your strongest and most reliable steel partner.",
+                contact_addr: "Room 2020, 21 Century City, 312 Suyeong-ro, Nam-gu, Busan, Korea",
+                footer_copy: "&copy; 2026 JANGAN STEEL. All Rights Reserved."
+            }
+        };
+
+        // 언어 변경 함수
+        function switchLanguage(lang) {
+            // 버튼 활성화 상태 변경
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // 텍스트 데이터 일괄 교체
+            const elements = document.querySelectorAll('[data-key]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        // 히어로 슬라이드 전환 스크립트
         const slides = document.querySelectorAll('.hero-slide');
         let currentSlide = 0;
 
