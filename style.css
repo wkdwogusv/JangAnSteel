@@ -1,0 +1,44 @@
+/* 기본 스타일 및 초기화 */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif; }
+body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
+
+/* 헤더 스타일 */
+header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+.logo { font-weight: bold; font-size: 1.2rem; color: #1a1a1a; }
+header nav ul { display: flex; list-style: none; gap: 20px; }
+header nav ul li a { text-decoration: none; color: #555; font-weight: 500; }
+.lang-switch button { padding: 5px 10px; border: 1px solid #ddd; background: #fff; cursor: pointer; }
+
+/* 히어로 섹션 */
+.hero-section { background: linear-gradient(135deg, #1f2937, #111827); color: #fff; text-align: center; padding: 80px 20px; }
+.hero-content .sub-title { font-size: 0.9rem; color: #9ca3af; letter-spacing: 2px; }
+.hero-content h1 { font-size: 2rem; margin-top: 10px; }
+
+/* 제품 섹션 및 카드 그리드 (모바일 반응형 적용) */
+.products-section { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 40px; }
+.section-header .sub-title { font-size: 0.85rem; color: #4b5563; font-weight: bold; }
+.section-header h2 { font-size: 1.8rem; margin-top: 5px; color: #111827; }
+
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.product-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s; }
+.product-card:hover { transform: translateY(-5px); }
+
+/* 제품 이미지 영역 임시 배경 (나중에 실제 사진으로 교체 가능) */
+.product-img { height: 180px; background-color: #e5e7eb; background-size: cover; background-position: center; }
+.bg-gi { background-color: #94a3b8; }
+.bg-egi { background-color: #cbd5e1; }
+.bg-gl { background-color: #64748b; }
+.bg-gix { background-color: #475569; }
+
+.product-info { padding: 20px; }
+.product-info h3 { font-size: 1.1rem; margin-bottom: 8px; color: #1f2937; }
+.product-info p { font-size: 0.9rem; color: #6b7280; margin-bottom: 15px; }
+
+/* 태그 스타일 */
+.tags span { display: inline-block; background: #f3f4f6; color: #4b5563; font-size: 0.75rem; padding: 4px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px; }
+
+/* 푸터 */
+footer { background: #111827; color: #9ca3af; text-align: center; padding: 40px 20px; margin-top: 60px; font-size: 0.9rem; }
+footer h3 { color: #fff; margin-bottom: 10px; }
+.copyright { margin-top: 20px; font-size: 0.8rem; color: #4b5563; }
