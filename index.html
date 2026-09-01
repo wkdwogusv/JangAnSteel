@@ -817,6 +817,9 @@
                 <input type="hidden" name="_subject" value="장안스틸 웹사이트 견적 문의">
                 <input type="hidden" name="_captcha" value="false">
                 
+                <!-- 이메일 입력란에 name="email" 속성을 주면 FormSubmit이 회신 주소로 자동 인식합니다 -->
+                <input type="hidden" name="_replyto"> 
+
                 <div class="form-group">
                     <label data-key="form_company">업체명 *</label>
                     <input type="text" name="업체명" required>
@@ -828,7 +831,7 @@
                 
                 <div class="form-group">
                     <label data-key="form_email">이메일 *</label>
-                    <input type="email" name="이메일" required>
+                    <input type="email" name="이메일" id="email" required oninput="document.querySelector('input[name=_replyto]').value = this.value">
                 </div>
                 <div class="form-group">
                     <label data-key="form_product">제품명 (GI, EGI 등) *</label>
@@ -844,7 +847,6 @@
                     <input type="text" name="필요중량" required>
                 </div>
 
-                <!-- 특이사항 및 표면처리 입력 필드 추가 -->
                 <div class="form-group full-width">
                     <label data-key="form_note">특이사항 (크로메이트/논크롬, 유/무광, 인산염, 내지문 등)</label>
                     <textarea name="특이사항_표면처리" rows="3" placeholder="예: 논크롬, 무광, 내지문 적용 요청 등 세부 사항을 적어주세요." style="padding: 15px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; background: #f8fafc; width: 100%; resize: vertical;"></textarea>
