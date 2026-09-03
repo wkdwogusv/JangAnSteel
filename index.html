@@ -442,11 +442,11 @@
             line-height: 1.45;
         }
 
-        /* 주요 제품 섹션 */
+        /* 주요 제품 섹션 (3열 그리드 배치) */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
         }
 
         .product-card {
@@ -466,30 +466,30 @@
         }
 
         .product-img {
-            height: 160px;
+            height: 180px;
             width: 100%;
             object-fit: cover;
             background-color: #e2e8f0;
         }
 
         .product-body {
-            padding: 20px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
             flex: 1;
         }
 
         .product-body h3 {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 800;
             color: var(--primary);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .product-body p {
             color: var(--text-sub);
-            font-size: 0.85rem;
-            margin-bottom: 15px;
+            font-size: 0.9rem;
+            margin-bottom: 18px;
             flex: 1;
         }
 
@@ -502,13 +502,13 @@
         .tag {
             background: #f1f5f9;
             color: var(--text-main);
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 0.78rem;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 5px;
         }
 
         .tag i {
@@ -766,13 +766,14 @@
         </div>
     </section>
 
-    <!-- 주요 제품 섹션 -->
+    <!-- 주요 제품 섹션 (5개 제품 및 안내 카드 포함) -->
     <section id="products">
         <div class="section-header" data-aos="fade-up">
             <span data-key="prod_sub">Total Steel Solution</span>
             <h2 data-key="prod_title">주요 제품 및 적용 분야</h2>
         </div>
         <div class="product-grid">
+            <!-- 01. GI -->
             <div class="product-card" data-aos="fade-up" data-aos-delay="100">
                 <img src="gi.jpg" alt="GI" class="product-img">
                 <div class="product-body">
@@ -781,20 +782,27 @@
                     <div class="tag-wrap">
                         <span class="tag"><i class="fa-solid fa-tv"></i> <span data-key="tag_homeapp">가전</span></span>
                         <span class="tag"><i class="fa-solid fa-car"></i> <span data-key="tag_auto">자동차</span></span>
+                        <span class="tag"><i class="fa-solid fa-wind"></i> <span data-key="tag_duct">덕트</span></span>
+                        <span class="tag"><i class="fa-solid fa-seedling"></i> <span data-key="tag_farm">농원용</span></span>
+                        <span class="tag"><i class="fa-solid fa-shield-halved"></i> <span data-key="tag_soundwall">방음벽</span></span>
                     </div>
                 </div>
             </div>
+            <!-- 02. EGI -->
             <div class="product-card" data-aos="fade-up" data-aos-delay="200">
                 <img src="egi.jpg" alt="EGI" class="product-img">
                 <div class="product-body">
                     <h3 data-key="prod2_title">02. EGI (전기아연도금강판)</h3>
                     <p data-key="prod2_desc">표면이 매끄럽고 균일하며 소재 본연의 기계적 성질을 완벽히 유지</p>
                     <div class="tag-wrap">
+                        <span class="tag"><i class="fa-solid fa-tv"></i> <span data-key="tag_homeapp">가전</span></span>
                         <span class="tag"><i class="fa-solid fa-door-closed"></i> <span data-key="tag_door">방화문</span></span>
                         <span class="tag"><i class="fa-solid fa-elevator"></i> <span data-key="tag_elevator">승강기</span></span>
+                        <span class="tag"><i class="fa-solid fa-car"></i> <span data-key="tag_auto">자동차</span></span>
                     </div>
                 </div>
             </div>
+            <!-- 03. GL -->
             <div class="product-card" data-aos="fade-up" data-aos-delay="300">
                 <img src="gl.jpg" alt="GL" class="product-img">
                 <div class="product-body">
@@ -803,18 +811,46 @@
                     <div class="tag-wrap">
                         <span class="tag"><i class="fa-solid fa-house-chimney"></i> <span data-key="tag_roof">지붕재</span></span>
                         <span class="tag"><i class="fa-solid fa-building"></i> <span data-key="tag_exterior">건축외장</span></span>
+                        <span class="tag"><i class="fa-solid fa-bars"></i> <span data-key="tag_pipe">파이프</span></span>
+                        <span class="tag"><i class="fa-solid fa-tv"></i> <span data-key="tag_homeapp">가전</span></span>
                     </div>
                 </div>
             </div>
+            <!-- 04. GIX / GLX -->
             <div class="product-card" data-aos="fade-up" data-aos-delay="400">
                 <img src="gix.jpg" alt="GIX" class="product-img">
                 <div class="product-body">
                     <h3 data-key="prod4_title">04. GIX / GLX (고내식 강판)</h3>
                     <p data-key="prod4_desc">알루미늄-아연-마그네슘 합금 도금으로 완성한 극강의 내식성 차세대 강판</p>
                     <div class="tag-wrap">
+                        <span class="tag"><i class="fa-solid fa-house-chimney"></i> <span data-key="tag_roof">지붕재</span></span>
+                        <span class="tag"><i class="fa-solid fa-building"></i> <span data-key="tag_exterior">건축외장</span></span>
                         <span class="tag"><i class="fa-solid fa-solar-panel"></i> <span data-key="tag_solar">태양광</span></span>
                         <span class="tag"><i class="fa-solid fa-city"></i> <span data-key="tag_anticorrosive">고내식재</span></span>
                     </div>
+                </div>
+            </div>
+            <!-- 05. 칼라 및 프린트 강판 -->
+            <div class="product-card" data-aos="fade-up" data-aos-delay="500">
+                <img src="color.jpg" alt="칼라/프린트강판" class="product-img">
+                <div class="product-body">
+                    <h3 data-key="prod5_title">05. 칼라 및 프린트 강판</h3>
+                    <p data-key="prod5_desc">다양한 색상과 고품격 패턴 디자인을 입혀 건축 외장재 및 인테리어에 최적화된 프리미엄 도장 강판</p>
+                    <div class="tag-wrap">
+                        <span class="tag"><i class="fa-solid fa-palette"></i> <span data-key="tag_color_ext">건축외장재</span></span>
+                        <span class="tag"><i class="fa-solid fa-couch"></i> <span data-key="tag_interior">인테리어</span></span>
+                        <span class="tag"><i class="fa-solid fa-door-closed"></i> <span data-key="tag_door">도어</span></span>
+                        <span class="tag"><i class="fa-solid fa-tv"></i> <span data-key="tag_homeapp">가전</span></span>
+                    </div>
+                </div>
+            </div>
+            <!-- 추가 안내 카드 -->
+            <div class="product-card" data-aos="fade-up" data-aos-delay="600" style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #fff; justify-content: center; text-align: center; padding: 40px;">
+                <div class="product-body" style="justify-content: center;">
+                    <i class="fa-solid fa-headset" style="font-size: 2.5rem; color: #38bdf8; margin-bottom: 20px;"></i>
+                    <h3 style="color: #fff; margin-bottom: 12px; font-size: 1.3rem;" data-key="card_support_title">특수 규격 및 맞춤 가공 문의</h3>
+                    <p style="color: #94a3b8; margin-bottom: 25px;" data-key="card_support_desc">찾으시는 특정 스펙이나 샤링·슬리팅 가공 건이 있으신가요? 지금 바로 전문 상담을 받아보세요.</p>
+                    <a href="#quote" style="display: inline-block; background: var(--accent); color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700;" data-key="card_support_btn">빠른 견적 접수하기</a>
                 </div>
             </div>
         </div>
@@ -954,6 +990,7 @@
                 comp3_desc: "GI, EGI, GL, 칼라강판은 물론 차세대 고내식 합금도금 강판(GIX)까지 고객의 모든 니즈를 충족하는 완벽한 포트폴리오를 제공합니다.",
                 prod_sub: "Total Steel Solution",
                 prod_title: "주요 제품 및 적용 분야",
+                
                 prod1_title: "01. GI (용융아연도금강판)",
                 prod1_desc: "우수한 내식성과 두꺼운 도금층을 자랑하는 범용 아연 도금 강판",
                 prod2_title: "02. EGI (전기아연도금강판)",
@@ -962,6 +999,28 @@
                 prod3_desc: "Al-Zn 합금 도금으로 내식·내구·내열·내산성을 모두 갖춘 완성형",
                 prod4_title: "04. GIX / GLX (고내식 강판)",
                 prod4_desc: "알루미늄-아연-마그네슘 합금 도금으로 완성한 극강의 내식성 차세대 강판",
+                prod5_title: "05. 칼라 및 프린트 강판",
+                prod5_desc: "다양한 색상과 고품격 패턴 디자인을 입혀 건축 외장재 및 인테리어에 최적화된 프리미엄 도장 강판",
+
+                tag_homeapp: "가전",
+                tag_auto: "자동차",
+                tag_duct: "덕트",
+                tag_farm: "농원용",
+                tag_soundwall: "방음벽",
+                tag_door: "방화문",
+                tag_elevator: "승강기",
+                tag_roof: "지붕재",
+                tag_exterior: "건축외장",
+                tag_pipe: "파이프",
+                tag_solar: "태양광",
+                tag_anticorrosive: "고내식재",
+                tag_color_ext: "건축외장재",
+                tag_interior: "인테리어",
+
+                card_support_title: "특수 규격 및 맞춤 가공 문의",
+                card_support_desc: "찾으시는 특정 스펙이나 샤링·슬리팅 가공 건이 있으신가요? 지금 바로 전문 상담을 받아보세요.",
+                card_support_btn: "빠른 견적 접수하기",
+
                 quote_sub: "Request a Quote",
                 quote_title: "견적 문의",
                 form_company: "업체명 *",
@@ -1004,6 +1063,7 @@
                 comp3_desc: "We provide a complete portfolio meeting all customer needs, from GI, EGI, GL, and color-coated sheets to next-gen high-corrosion-resistant alloy-coated steel (GIX).",
                 prod_sub: "Total Steel Solution",
                 prod_title: "Key Products & Applications",
+
                 prod1_title: "01. GI (Hot-Dip Galvanized Steel)",
                 prod1_desc: "General-purpose galvanized steel featuring superior corrosion resistance and thick coating layers.",
                 prod2_title: "02. EGI (Electro-Galvanized Steel)",
@@ -1012,6 +1072,28 @@
                 prod3_desc: "An ultimate type featuring corrosion, durability, heat, and acid resistance through Al-Zn alloy coating.",
                 prod4_title: "04. GIX / GLX (High Corrosion Resistant Steel)",
                 prod4_desc: "Next-gen steel completed with Aluminum-Zinc-Magnesium alloy coating for extreme corrosion resistance.",
+                prod5_title: "05. Color & Print Coated Steel",
+                prod5_desc: "Premium coated steel optimized for architectural exteriors and interiors with various colors and high-end patterns.",
+
+                tag_homeapp: "Home Appliances",
+                tag_auto: "Automotive",
+                tag_duct: "Duct",
+                tag_farm: "Agricultural",
+                tag_soundwall: "Sound Wall",
+                tag_door: "Fire Door",
+                tag_elevator: "Elevator",
+                tag_roof: "Roofing",
+                tag_exterior: "Exterior",
+                tag_pipe: "Pipe",
+                tag_solar: "Solar",
+                tag_anticorrosive: "Anti-Corrosion",
+                tag_color_ext: "Exterior",
+                tag_interior: "Interior",
+
+                card_support_title: "Special Specs & Custom Processing",
+                card_support_desc: "Looking for specific specs or shearing/slitting services? Get professional consultation right away.",
+                card_support_btn: "Quick Quote Request",
+
                 quote_sub: "Request a Quote",
                 quote_title: "Get a Quote",
                 form_company: "Company Name *",
