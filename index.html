@@ -77,7 +77,6 @@
             object-fit: contain;
         }
 
-        /* (주)장안스틸 메인 + 영문 서브 로고 스타일 */
         .logo-text-wrap {
             display: flex;
             flex-direction: column;
@@ -128,7 +127,6 @@
             color: var(--accent);
         }
 
-        /* 언어 전환 버튼 스타일 */
         .lang-switch {
             display: flex;
             background: #f1f5f9;
@@ -323,7 +321,6 @@
             color: var(--primary);
         }
 
-        /* 파트너사 카드 컨테이너 */
         .partner-card-box {
             background: var(--bg-white);
             border-radius: 20px;
@@ -381,85 +378,148 @@
         }
 
         /* 핵심 경쟁력 섹션 */
-        .comp-section-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .comp-cards-wrapper {
+        .comp-container {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 30px;
         }
 
-        .comp-img-box {
-            position: relative;
-            background: #fbfbfc;
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-            padding: 10px;
-            height: 490px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .comp-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .comp-card {
+        .comp-card-item {
             background: var(--bg-white);
-            border-radius: 14px;
-            padding: 22px 26px;
+            border-radius: 20px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 100px 1.5fr 1fr;
+            gap: 40px;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
             position: relative;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s ease;
         }
 
-        .comp-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(2, 132, 199, 0.1);
+        .comp-card-item:hover {
             border-color: var(--accent);
+            box-shadow: 0 15px 40px rgba(2, 132, 199, 0.08);
+            transform: translateY(-3px);
         }
 
-        .comp-card .num {
-            font-size: 1.8rem;
+        .comp-big-num {
+            font-size: 3.5rem;
             font-weight: 900;
-            color: #f1f5f9;
-            position: absolute;
-            top: 10px;
-            right: 20px;
+            color: var(--primary);
+            line-height: 1;
+            letter-spacing: -2px;
         }
 
-        .comp-card i {
-            font-size: 1.3rem;
-            color: var(--accent);
+        .comp-text-box h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
             margin-bottom: 6px;
         }
 
-        .comp-card h3 {
-            font-size: 1.05rem;
+        .comp-eng-sub {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .comp-text-box p {
+            color: var(--text-sub);
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        .comp-features-right {
+            display: flex;
+            justify-content: space-around;
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px;
+            gap: 15px;
+        }
+
+        .comp-sub-feature {
+            text-align: center;
+            flex: 1;
+        }
+
+        .comp-sub-feature i {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .comp-sub-feature .feature-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2px;
+        }
+
+        .comp-sub-feature .feature-desc {
+            font-size: 0.75rem;
+            color: var(--text-sub);
+        }
+
+        /* 제품 포트폴리오 뱃지 스타일 */
+        .portfolio-icons-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .portfolio-badge {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px 8px;
+            text-align: center;
+            flex: 1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .portfolio-badge:hover {
+            background: #fff;
+            border-color: var(--accent);
+            box-shadow: 0 6px 16px rgba(2, 132, 199, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .portfolio-badge i {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .portfolio-badge span {
+            font-size: 0.78rem;
             font-weight: 800;
             color: var(--primary);
-            margin-bottom: 4px;
+            display: block;
         }
 
-        .comp-card p {
+        .portfolio-badge small {
+            font-size: 0.65rem;
             color: var(--text-sub);
-            font-size: 0.85rem;
-            line-height: 1.45;
         }
 
-        /* 주요 제품 섹션 (3열 그리드 배치) */
+        /* 주요 제품 섹션 */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -475,6 +535,7 @@
             transition: transform 0.3s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
+            scroll-margin-top: 120px; /* 화면 중앙에 오도록 스크롤 여백 설정 */
         }
 
         .product-card:hover {
@@ -603,7 +664,7 @@
             background: #1e293b;
         }
 
-        /* 견적 문의 섹션 (FormSubmit AJAX 연동) */
+        /* 견적 문의 섹션 */
         .quote-container {
             max-width: 900px;
             margin: 0 auto;
@@ -728,15 +789,18 @@
             border-top: 1px solid #1e293b;
         }
 
-        /* 반응형 */
+        /* 반응형 디자인 */
         @media(max-width: 1200px) {
             .product-grid { grid-template-columns: repeat(2, 1fr); }
-            .comp-section-content { grid-template-columns: 1fr; }
+            .comp-card-item { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+            .comp-big-num { display: none; }
+            .comp-features-right { flex-direction: column; gap: 20px; }
+            .portfolio-icons-row { flex-wrap: wrap; justify-content: center; }
+            .portfolio-badge { min-width: 100px; }
             .contact-content { grid-template-columns: 1fr; }
             .about-grid { grid-template-columns: 1fr; }
             .catalog-box { grid-template-columns: 1fr; text-align: center; }
             .catalog-btn-wrap { justify-content: center; }
-            .comp-img-box { height: 350px; }
         }
         @media(max-width: 768px) {
             .product-grid { grid-template-columns: 1fr; }
@@ -834,34 +898,104 @@
             <span data-key="comp_sub">Our Competitiveness</span>
             <h2 data-key="comp_title">장안스틸의 핵심 경쟁력</h2>
         </div>
-        <div class="comp-section-content">
-            <div class="comp-cards-wrapper" data-aos="fade-right">
-                <div class="comp-card">
-                    <div class="num">01</div>
-                    <i class="fa-solid fa-won-sign"></i>
+
+        <div class="comp-container">
+            <!-- 01. 단가 경쟁력 -->
+            <div class="comp-card-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="comp-big-num">01</div>
+                <div class="comp-text-box">
+                    <span class="comp-eng-sub">Cost Competitiveness</span>
                     <h3 data-key="comp1_title">압도적인 단가 경쟁력</h3>
-                    <p data-key="comp1_desc">메이저 4사와의 다이렉트 소싱으로 유통 단계를 최소화하고 시장 변동성에도 흔들리지 않는 가장 합리적인 견적을 약속드립니다.</p>
+                    <p data-key="comp1_desc">메이저 4사와의 직거래를 통한 다이렉트 소싱으로 유통 거품을 제거하여 최고의 가격 경쟁력을 제공합니다.</p>
                 </div>
-                <div class="comp-card">
-                    <div class="num">02</div>
-                    <i class="fa-solid fa-map-location-dot"></i>
-                    <h3 data-key="comp2_title">광역 네트워크 & 신속 납기</h3>
-                    <p data-key="comp2_desc">부산을 중심으로 전국 주요 거점 및 협력 가공처를 연계하여 운송비를 혁신적으로 절감하고 긴급 발주에도 신속하게 대응합니다.</p>
-                </div>
-                <div class="comp-card">
-                    <div class="num">03</div>
-                    <i class="fa-solid fa-layer-group"></i>
-                    <h3 data-key="comp3_title">토탈 스틸 솔루션</h3>
-                    <p data-key="comp3_desc">GI, EGI, GL, 칼라강판은 물론 차세대 고내식 합금도금 강판(GIX)까지 고객의 모든 니즈를 충족하는 완벽한 포트폴리오를 제공합니다.</p>
+                <div class="comp-features-right">
+                    <div class="comp-sub-feature">
+                        <i class="fa-solid fa-coins"></i>
+                        <div class="feature-title" data-key="comp1_f1_title">유통 단계 최소화</div>
+                        <div class="feature-desc" data-key="comp1_f1_desc">COST DOWN</div>
+                    </div>
+                    <div class="comp-sub-feature">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <div class="feature-title" data-key="comp1_f2_title">시장 변동성 대응</div>
+                        <div class="feature-desc" data-key="comp1_f2_desc">PRICE STABILITY</div>
+                    </div>
+                    <div class="comp-sub-feature">
+                        <i class="fa-solid fa-handshake-simple"></i>
+                        <div class="feature-title" data-key="comp1_f3_title">합리적 투명 견적</div>
+                        <div class="feature-desc" data-key="comp1_f3_desc">FAIR PRICE</div>
+                    </div>
                 </div>
             </div>
-            <div class="comp-img-box" data-aos="fade-left">
-                <img src="main2.jpg" alt="장안스틸 핵심 경쟁력 이미지">
+
+            <!-- 02. 네트워크 & 납기 -->
+            <div class="comp-card-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="comp-big-num">02</div>
+                <div class="comp-text-box">
+                    <span class="comp-eng-sub">Wide Network & Fast Delivery</span>
+                    <h3 data-key="comp2_title">광역 네트워크 & 신속 납기 시스템</h3>
+                    <p data-key="comp2_desc">전국 주요 거점과 다수의 협력 가공처를 통해 운송비를 혁신적으로 절감하고, 긴급 발주에도 신속하게 대응합니다.</p>
+                </div>
+                <div class="comp-features-right">
+                    <div class="comp-sub-feature">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="feature-title" data-key="comp2_f1_title">전국 주요 거점</div>
+                        <div class="feature-desc" data-key="comp2_f1_desc">10+ 개소 연계</div>
+                    </div>
+                    <div class="comp-sub-feature">
+                        <i class="fa-solid fa-industry"></i>
+                        <div class="feature-title" data-key="comp2_f2_title">협력 가공처</div>
+                        <div class="feature-desc" data-key="comp2_f2_desc">10+ 개소 확보</div>
+                    </div>
+                    <div class="comp-sub-feature">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <div class="feature-title" data-key="comp2_f3_title">긴급 대응</div>
+                        <div class="feature-desc" data-key="comp2_f3_desc">항시 가능</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 03. 제품 포트폴리오 (클릭 시 해당 카드가 화면 중앙으로 오도록 scrollToProduct 함수 연결) -->
+            <div class="comp-card-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="comp-big-num">03</div>
+                <div class="comp-text-box">
+                    <span class="comp-eng-sub">Total Steel Solution</span>
+                    <h3 data-key="comp3_title">폭넓은 제품 포트폴리오</h3>
+                    <p data-key="comp3_desc">GI, EGI, GL, 칼라강판은 물론 차세대 고내식 강판인 삼원계 합금도금 강판(GIX)까지 고객의 모든 니즈를 충족하는 토탈 솔루션을 제공합니다.</p>
+                </div>
+                <div class="comp-features-right" style="padding: 15px;">
+                    <div class="portfolio-icons-row">
+                        <div class="portfolio-badge" onclick="scrollToProduct('product-gi')">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <span>GI</span>
+                            <small data-key="badge_gi">용융아연도금</small>
+                        </div>
+                        <div class="portfolio-badge" onclick="scrollToProduct('product-egi')">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>EGI</span>
+                            <small data-key="badge_egi">전기아연도금</small>
+                        </div>
+                        <div class="portfolio-badge" onclick="scrollToProduct('product-gl')">
+                            <i class="fa-solid fa-shield"></i>
+                            <span>GL</span>
+                            <small data-key="badge_gl">갈바륨</small>
+                        </div>
+                        <div class="portfolio-badge" onclick="scrollToProduct('product-gix')">
+                            <i class="fa-solid fa-gem"></i>
+                            <span>GIX/GLX</span>
+                            <small data-key="badge_gix">고내식강판</small>
+                        </div>
+                        <div class="portfolio-badge" onclick="scrollToProduct('product-color')">
+                            <i class="fa-solid fa-palette"></i>
+                            <span data-key="badge_color_name">칼라강판</span>
+                            <small data-key="badge_color_sub">Pre-Coated</small>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 주요 제품 섹션 (5개 제품 및 안내 카드 포함) -->
+    <!-- 주요 제품 섹션 (각 카드에 고유 ID 부여) -->
     <section id="products">
         <div class="section-header" data-aos="fade-up">
             <span data-key="prod_sub">Total Steel Solution</span>
@@ -869,7 +1003,7 @@
         </div>
         <div class="product-grid">
             <!-- 01. GI -->
-            <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div id="product-gi" class="product-card" data-aos="fade-up" data-aos-delay="100">
                 <img src="gi.jpg" alt="GI" class="product-img">
                 <div class="product-body">
                     <h3 data-key="prod1_title">01. GI (용융아연도금강판)</h3>
@@ -884,7 +1018,7 @@
                 </div>
             </div>
             <!-- 02. EGI -->
-            <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+            <div id="product-egi" class="product-card" data-aos="fade-up" data-aos-delay="200">
                 <img src="egi.jpg" alt="EGI" class="product-img">
                 <div class="product-body">
                     <h3 data-key="prod2_title">02. EGI (전기아연도금강판)</h3>
@@ -898,7 +1032,7 @@
                 </div>
             </div>
             <!-- 03. GL -->
-            <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+            <div id="product-gl" class="product-card" data-aos="fade-up" data-aos-delay="300">
                 <img src="gl.jpg" alt="GL" class="product-img">
                 <div class="product-body">
                     <h3 data-key="prod3_title">03. GL (갈바륨강판)</h3>
@@ -912,7 +1046,7 @@
                 </div>
             </div>
             <!-- 04. GIX / GLX -->
-            <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+            <div id="product-gix" class="product-card" data-aos="fade-up" data-aos-delay="400">
                 <img src="gix.jpg" alt="GIX" class="product-img">
                 <div class="product-body">
                     <h3 data-key="prod4_title">04. GIX / GLX (고내식 강판)</h3>
@@ -926,7 +1060,7 @@
                 </div>
             </div>
             <!-- 05. 칼라 및 프린트 강판 -->
-            <div class="product-card" data-aos="fade-up" data-aos-delay="500">
+            <div id="product-color" class="product-card" data-aos="fade-up" data-aos-delay="500">
                 <img src="color.jpg" alt="칼라/프린트강판" class="product-img">
                 <div class="product-body">
                     <h3 data-key="prod5_title">05. 칼라 및 프린트 강판</h3>
@@ -974,7 +1108,7 @@
         </div>
     </section>
 
-    <!-- 견적 문의 섹션 (FormSubmit AJAX 연동) -->
+    <!-- 견적 문의 섹션 -->
     <section id="quote" style="background: #f8fafc;">
         <div class="section-header" data-aos="fade-up">
             <span data-key="quote_sub">Request a Quote</span>
@@ -1061,6 +1195,14 @@
     <script>
         AOS.init({ duration: 1000, once: true });
 
+        // 선택한 제품 카드가 화면 중앙에 오도록 부드럽게 스크롤하는 함수
+        function scrollToProduct(productId) {
+            const targetElement = document.getElementById(productId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
         // 견적 문의 폼 제출 시 비동기 전송 및 맞춤 알림창 띄우기
         document.getElementById('quoteForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -1075,7 +1217,7 @@
             }).then(response => {
                 if (response.ok) {
                     alert(companyName + "님, 견적 요청이 완료되었습니다. 곧 연락 드리겠습니다. 감사합니다.");
-                    form.reset(); // 입력창 초기화
+                    form.reset();
                 } else {
                     alert("전송 중 문제가 발생했습니다. 다시 시도해 주세요.");
                 }
@@ -1104,15 +1246,37 @@
                 partner_title: "주요 메이저 파트너사 협력 체계",
                 comp_sub: "Our Competitiveness",
                 comp_title: "장안스틸의 핵심 경쟁력",
+                
                 comp1_title: "압도적인 단가 경쟁력",
-                comp1_desc: "메이저 4사와의 다이렉트 소싱으로 유통 단계를 최소화하고 시장 변동성에도 흔들리지 않는 가장 합리적인 견적을 약속드립니다.",
-                comp2_title: "광역 네트워크 & 신속 납기",
-                comp2_desc: "부산을 중심으로 전국 주요 거점 및 협력 가공처를 연계하여 운송비를 혁신적으로 절감하고 긴급 발주에도 신속하게 대응합니다.",
-                comp3_title: "토탈 스틸 솔루션",
-                comp3_desc: "GI, EGI, GL, 칼라강판은 물론 차세대 고내식 합금도금 강판(GIX)까지 고객의 모든 니즈를 충족하는 완벽한 포트폴리오를 제공합니다.",
+                comp1_desc: "메이저 4사와의 직거래를 통한 다이렉트 소싱으로 유통 거품을 제거하여 최고의 가격 경쟁력을 제공합니다.",
+                comp1_f1_title: "유통 단계 최소화",
+                comp1_f1_desc: "COST DOWN",
+                comp1_f2_title: "시장 변동성 대응",
+                comp1_f2_desc: "PRICE STABILITY",
+                comp1_f3_title: "합리적 투명 견적",
+                comp1_f3_desc: "FAIR PRICE",
+
+                comp2_title: "광역 네트워크 & 신속 납기 시스템",
+                comp2_desc: "전국 주요 거점과 다수의 협력 가공처를 통해 운송비를 혁신적으로 절감하고, 긴급 발주에도 신속하게 대응합니다.",
+                comp2_f1_title: "전국 주요 거점",
+                comp2_f1_desc: "10+ 개소 연계",
+                comp2_f2_title: "협력 가공처",
+                comp2_f2_desc: "10+ 개소 확보",
+                comp2_f3_title: "긴급 대응",
+                comp2_f3_desc: "항시 가능",
+
+                comp3_title: "폭넓은 제품 포트폴리오",
+                comp3_desc: "GI, EGI, GL, 칼라강판은 물론 차세대 고내식 강판인 삼원계 합금도금 강판(GIX)까지 고객의 모든 니즈를 충족하는 토탈 솔루션을 제공합니다.",
+                
+                badge_gi: "용융아연도금",
+                badge_egi: "전기아연도금",
+                badge_gl: "갈바륨",
+                badge_gix: "고내식강판",
+                badge_color_name: "칼라강판",
+                badge_color_sub: "Pre-Coated",
+
                 prod_sub: "Total Steel Solution",
                 prod_title: "주요 제품 및 적용 분야",
-                
                 prod1_title: "01. GI (용융아연도금강판)",
                 prod1_desc: "우수한 내식성과 두꺼운 도금층을 자랑하는 범용 아연 도금 강판",
                 prod2_title: "02. EGI (전기아연도금강판)",
@@ -1185,15 +1349,37 @@
                 partner_title: "Major Partner Collaboration Network",
                 comp_sub: "Our Competitiveness",
                 comp_title: "Our Core Competitiveness",
+                
                 comp1_title: "Unmatched Pricing Competitiveness",
-                comp1_desc: "We minimize distribution tiers through direct sourcing with major mills, promising the most reasonable quotes unaffected by market volatility.",
-                comp2_title: "Wide Network & Fast Delivery",
-                comp2_desc: "Centering around Busan, we link nationwide key bases and partner processors to sharply reduce shipping costs and promptly handle urgent orders.",
-                comp3_title: "Total Steel Solution",
-                comp3_desc: "We provide a complete portfolio meeting all customer needs, from GI, EGI, GL, and color-coated sheets to next-gen high-corrosion-resistant alloy-coated steel (GIX).",
+                comp1_desc: "We minimize distribution tiers through direct sourcing with major mills, eliminating margins to provide the best prices.",
+                comp1_f1_title: "Minimizing Tiers",
+                comp1_f1_desc: "COST DOWN",
+                comp1_f2_title: "Volatility Response",
+                comp1_f2_desc: "PRICE STABILITY",
+                comp1_f3_title: "Fair & Transparent",
+                comp1_f3_desc: "FAIR PRICE",
+
+                comp2_title: "Wide Network & Fast Delivery System",
+                comp2_desc: "We drastically reduce shipping costs through nationwide key bases and multiple processors, responding promptly to urgent orders.",
+                comp2_f1_title: "Nationwide Hubs",
+                comp2_f1_desc: "10+ Bases Linked",
+                comp2_f2_title: "Partner Processors",
+                comp2_f2_desc: "10+ Secured",
+                comp2_f3_title: "Emergency Response",
+                comp2_f3_desc: "Always Available",
+
+                comp3_title: "Total Steel Solution Portfolio",
+                comp3_desc: "We provide a complete solution meeting all customer needs, from GI, EGI, GL, and color-coated steel to next-gen high corrosion-resistant GIX.",
+                
+                badge_gi: "Hot-Dip Galv.",
+                badge_egi: "Electro-Galv.",
+                badge_gl: "Galvalume",
+                badge_gix: "High-Corrosion",
+                badge_color_name: "Color Steel",
+                badge_color_sub: "Pre-Coated",
+
                 prod_sub: "Total Steel Solution",
                 prod_title: "Key Products & Applications",
-
                 prod1_title: "01. GI (Hot-Dip Galvanized Steel)",
                 prod1_desc: "General-purpose galvanized steel featuring superior corrosion resistance and thick coating layers.",
                 prod2_title: "02. EGI (Electro-Galvanized Steel)",
