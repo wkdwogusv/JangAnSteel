@@ -1187,7 +1187,7 @@
 
     <!-- 푸터 -->
     <footer>
-        <p data-key="footer_copy">&copy; 2026 JANGAN STEEL. All Rights Reserved.</p>
+        <p data-key="footer_copy" id="erp-entry" style="user-select:none;-webkit-user-select:none;touch-action:manipulation">&copy; 2026 JANGAN STEEL. All Rights Reserved.</p>
     </footer>
 
     <!-- 스크립트 -->
@@ -1454,6 +1454,23 @@
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
         }, 4000);
+    </script>
+<script>
+        // 연속 클릭 간격이 1.5초를 넘으면 처음부터 다시 셉니다.
+        (() => {
+            const entry = document.getElementById('erp-entry');
+            let count = 0;
+            let lastClick = 0;
+            entry.addEventListener('click', () => {
+                const now = performance.now();
+                count = now - lastClick <= 1500 ? count + 1 : 1;
+                lastClick = now;
+                if (count === 5) {
+                    count = 0;
+                    window.location.assign('https://jangansteel-erp-view.maplecharm15.chatgpt.site/');
+                }
+            });
+        })();
     </script>
 </body>
 </html>
