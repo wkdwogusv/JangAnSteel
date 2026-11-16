@@ -835,6 +835,7 @@
                     <li><a href="#catalog" data-key="nav_catalog">카탈로그</a></li>
                     <li><a href="#quote" data-key="nav_quote">견적문의</a></li>
                     <li><a href="#contact" data-key="nav_contact">오시는길</a></li>
+                    <li><a href="#team" data-key="nav_team">장안스틸 사람들</a></li>
                 </ul>
             </nav>
             <div class="lang-switch">
@@ -1186,6 +1187,14 @@
     </section>
 
     <!-- 푸터 -->
+    <section id="team" aria-labelledby="team-title" style="scroll-margin-top: 100px; background: #f8fafc;">
+        <div class="section-header"><h2 id="team-title" data-key="team_title">장안스틸 사람들</h2></div>
+        <figure data-team-slide style="width: 100%; max-width: 860px; margin: 0 auto;">
+            <img src="team-blood-donation.png" alt="헌혈에 참여한 장안스틸 직원 단체사진" width="1394" height="1001" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 16px;">
+            <figcaption style="margin-top: 16px; text-align: center; color: var(--text-sub);" data-key="team_caption">장안스틸 직원들이 함께 헌혈에 참여했습니다.</figcaption>
+        </figure>
+    </section>
+
     <footer>
         <p data-key="footer_copy" id="erp-entry" style="user-select:none;-webkit-user-select:none;touch-action:manipulation">&copy; 2026 JANGAN STEEL. All Rights Reserved.</p>
     </footer>
@@ -1228,12 +1237,14 @@
 
         const translations = {
             ko: {
+                team_title: "장안스틸 사람들", team_caption: "장안스틸 직원들이 함께 헌혈에 참여했습니다.",
                 nav_about: "회사소개",
                 nav_comp: "핵심경쟁력",
                 nav_products: "제품적용분야",
                 nav_catalog: "카탈로그",
                 nav_quote: "견적문의",
                 nav_contact: "오시는길",
+                nav_team: "장안스틸 사람들",
                 hero_tag: "STEEL SOLUTION LEADER",
                 hero_title: "최고의 철강 솔루션으로<br><span>가치를 창조합니다</span>",
                 hero_desc: "메이저 4사 직거래 네트워크와 100% 국산 정품 보증을 통해 귀사의 성장을 뒷받침하는 가장 단단한 파트너가 되어 드립니다.",
@@ -1331,12 +1342,14 @@
                 footer_copy: "&copy; 2026 JANGAN STEEL. All Rights Reserved."
             },
             en: {
+                team_title: "Our People", team_caption: "The JangAn Steel team took part in a blood donation drive.",
                 nav_about: "About Us",
                 nav_comp: "Competitiveness",
                 nav_products: "Products",
                 nav_catalog: "Catalog",
                 nav_quote: "Get a Quote",
                 nav_contact: "Contact",
+                nav_team: "Our People",
                 hero_tag: "STEEL SOLUTION LEADER",
                 hero_title: "Creating Value with<br><span>The Best Steel Solutions</span>",
                 hero_desc: "We support your growth as the strongest partner through direct major mill networks and 100% domestic product certification.",
@@ -1470,6 +1483,23 @@
                     window.location.assign('https://jangansteel-erp.jhjj0514.workers.dev/');
                 }
             });
+        })();
+    </script>
+    <script>
+        (() => {
+            const slides = [...document.querySelectorAll('#team [data-team-slide]')];
+            if (slides.length < 2) return;
+            const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            let current = 0;
+            const show = () => slides.forEach((slide, index) => {
+                slide.hidden = index !== current;
+            });
+            show();
+            window.setInterval(() => {
+                if (document.hidden || motion.matches) return;
+                current = (current + 1) % slides.length;
+                show();
+            }, 5000);
         })();
     </script>
 </body>
